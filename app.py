@@ -147,7 +147,7 @@ HTML_TEMPLATE = """
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color: transparent;
             color: var(--text-main);
             min-height: 100vh;
             padding: 2.5rem 2rem;
@@ -166,6 +166,7 @@ HTML_TEMPLATE = """
             height: 100vh;
             z-index: -1;
             pointer-events: none;
+            background-color: var(--bg-color);
         }
 
         .container {

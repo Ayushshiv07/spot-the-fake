@@ -2,9 +2,9 @@
 
 A lightweight, high-performance photo-authenticity detector that distinguishes **real photographs** from **photos taken of a screen** (recaptured screen fraud/screenshot cheating).
 
-### 🌐 Live Web Demo: [https://spot-the-fake-nine.vercel.app](https://spot-the-fake-nine.vercel.app)
+### Live Web Demo: [https://spot-the-fake-nine.vercel.app](https://spot-the-fake-nine.vercel.app)
 
-### 📺 Demo Video:
+###  Demo Video:
 ![Spot the Fake Photo Demo](demo.mp4)
 
  1. **LOO-CV Accuracy**: **95.9%**  

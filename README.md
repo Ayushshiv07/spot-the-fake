@@ -2,10 +2,10 @@
 
 A lightweight, high-performance photo-authenticity detector that distinguishes **real photographs** from **photos taken of a screen** (recaptured screen fraud/screenshot cheating).
 
- **LOO-CV Accuracy**: **95.9%**  
- **Average Latency**: **~514 ms** (CPU-only, no GPU required)  
- **On-device Cost**: **$0.00 per image** (100% local, no API calls, no cloud servers)  
- **Model footprint**: **283 KB** (Random Forest classifier + JSON metadata)
+ 1. **LOO-CV Accuracy**: **95.9%**  
+ 2. **Average Latency**: **~514 ms** (CPU-only, no GPU required)  
+ 3. **On-device Cost**: **$0.00 per image** (100% local, no API calls, no cloud servers)  
+ 4. **Model footprint**: **283 KB** (Random Forest classifier + JSON metadata)
 
 ---
 

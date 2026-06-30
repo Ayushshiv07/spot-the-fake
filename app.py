@@ -961,45 +961,31 @@ HTML_TEMPLATE = """
             
             bgScene = new THREE.Scene();
             bgCamera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-            bgCamera.position.z = 1;
-            bgCamera.rotation.x = Math.PI / 2;
+            bgCamera.position.z = 100;
             
             bgRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
             bgRenderer.setSize(window.innerWidth, window.innerHeight);
+            bgRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             bgContainer.appendChild(bgRenderer.domElement);
             
             starGeo = new THREE.BufferGeometry();
-            const starCount = 800;
+            const starCount = 500;
             const positions = [];
             
             for(let i=0; i<starCount; i++) {
                 positions.push(
-                    Math.random() * 600 - 300,
-                    Math.random() * 600 - 300,
-                    Math.random() * 600 - 300
+                    Math.random() * 800 - 400,
+                    Math.random() * 800 - 400,
+                    Math.random() * 800 - 400
                 );
             }
             starGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
             
-            // Texture for glow
-            const pCanvas = document.createElement('canvas');
-            pCanvas.width = 16;
-            pCanvas.height = 16;
-            const pCtx = pCanvas.getContext('2d');
-            const grad = pCtx.createRadialGradient(8, 8, 0, 8, 8, 8);
-            grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-            grad.addColorStop(1, 'rgba(99, 102, 241, 0)');
-            pCtx.fillStyle = grad;
-            pCtx.fillRect(0, 0, 16, 16);
-            const pTexture = new THREE.CanvasTexture(pCanvas);
-            
             const starMaterial = new THREE.PointsMaterial({
-                color: 0x818cf8,
-                size: 2.5,
-                map: pTexture,
+                color: 0x6366f1, // Sleek indigo matching the logo/cards
+                size: 2.0,
                 transparent: true,
-                opacity: 0.5,
-                depthWrite: false
+                opacity: 0.6
             });
             
             stars = new THREE.Points(starGeo, starMaterial);
@@ -1026,16 +1012,16 @@ HTML_TEMPLATE = """
         function animateBg() {
             requestAnimationFrame(animateBg);
             const positions = starGeo.attributes.position.array;
-            for(let i=1; i<positions.length; i+=3) {
-                positions[i] -= 0.15;
-                if (positions[i] < -300) {
-                    positions[i] = 300;
+            for(let i=2; i<positions.length; i+=3) {
+                positions[i] += 0.4; // Drift forward along Z axis
+                if (positions[i] > 150) {
+                    positions[i] = -600; // Reset far behind the camera
                 }
             }
             starGeo.attributes.position.needsUpdate = true;
-            stars.rotation.y += 0.0004;
-            bgScene.rotation.x += (mouseY * 0.0005 - bgScene.rotation.x) * 0.05;
-            bgScene.rotation.y += (mouseX * 0.0005 - bgScene.rotation.y) * 0.05;
+            stars.rotation.y += 0.0006;
+            bgScene.rotation.x += (mouseY * 0.0003 - bgScene.rotation.x) * 0.05;
+            bgScene.rotation.y += (mouseX * 0.0003 - bgScene.rotation.y) * 0.05;
             bgRenderer.render(bgScene, bgCamera);
         }
 

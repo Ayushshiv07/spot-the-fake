@@ -9,7 +9,7 @@ A lightweight, high-performance photo-authenticity detector that distinguishes *
 
 ---
 
-## 🎨 3D Visual Diagnostics Dashboard (Live Demo)
+##  3D Visual Diagnostics Dashboard (Live Demo)
 
 The project includes an **interactive 3D WebGL Dashboard** served locally using Flask, Three.js, and Vanilla-Tilt.js.
 
@@ -26,7 +26,7 @@ Open **`http://localhost:5000`** in your browser. (If testing on a mobile device
 
 ---
 
-## 🧠 Submission Note (Half-Page Summary)
+##  Submission Note (Half-Page Summary)
 
 ### Approach
 I built a classical signal-processing pipeline that reduces each image to 13 handcrafted features (FFT frequency analysis for pixel-grids, JPEG blockiness for re-encoding artifacts, noise level in smooth regions, Laplacian variance for sharpness, HSV statistics, chromatic aberration ratio, and glare ratio). These features are passed to a Random Forest classifier (selected via Leave-One-Out CV out of 9 candidates). To keep latency low, I implemented PIL native cropping: the image is loaded lazily, and only five 512×512 patches are extracted and converted to NumPy for FFT/spatial analysis.
@@ -65,7 +65,7 @@ I used Leave-One-Out CV to prevent train/test leakage on a small sample size. Th
 
 ---
 
-## 💻 CLI Setup & Usage
+##  CLI Setup & Usage
 
 ### Setup
 ```bash

@@ -4,6 +4,9 @@ A lightweight, high-performance photo-authenticity detector that distinguishes *
 
 ### 🌐 Live Web Demo: [https://spot-the-fake-nine.vercel.app](https://spot-the-fake-nine.vercel.app)
 
+### 📺 Demo Video:
+![Spot the Fake Photo Demo](demo.mp4)
+
  1. **LOO-CV Accuracy**: **95.9%**  
  2. **Average Latency**: **~514 ms** (CPU-only, no GPU required)  
  3. **On-device Cost**: **$0.00 per image** (100% local, no API calls, no cloud servers)  

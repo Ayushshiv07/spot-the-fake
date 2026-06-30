@@ -1,0 +1,12 @@
+{
+  "n_images_benchmarked": 30,
+  "avg_ms": 514.75,
+  "p50_ms": 525.05,
+  "p95_ms": 634.67,
+  "min_ms": 263.1,
+  "max_ms": 685.32,
+  "device": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel \u2014 Windows 11",
+  "gpu": "none",
+  "on_device_cost_per_image_usd": 0.0,
+  "cloud_cost_per_1k_images_usd": "0.01\u20130.05 (estimate)"
+}

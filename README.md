@@ -45,7 +45,7 @@ I used Leave-One-Out CV to prevent train/test leakage on a small sample size. Th
 
 ---
 
-## 🛠️ Feature Engineering (13 Diagnostic Signals)
+## Feature Engineering (13 Diagnostic Signals)
 
 | Feature | Category | Purpose |
 |---|---|---|
